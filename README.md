@@ -14,7 +14,7 @@ Before getting started, ensure Python 3.x is installed on your system.
 
 ## Usage
 
-*You will need an OpenAI API key which needs to be included in the code for this to work!*
+*You will need an OpenAI API key, which needs to be included in the code for this to work!*
 Execute `python3 chatgpt_voice_assistant.py` from your terminal to start the assistant. Ensure your microphone is properly configured and working. Speak "Meatball" to activate the assistant and begin interaction.
 
 ## Contribution
