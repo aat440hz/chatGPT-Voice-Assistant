@@ -1,5 +1,7 @@
 import os
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key='your-open-api-key')
 from dotenv import load_dotenv
 import time
 import speech_recognition as sr
@@ -7,7 +9,6 @@ import pyttsx3
 import pygame
 
 language = 'en'
-openai.api_key = 'your-open-api-key'
 load_dotenv()
 model = 'gpt-3.5-turbo'
 
@@ -75,7 +76,7 @@ def listen_and_respond(source):
             transcript += f"You: {text}\n"
 
             # Send the entire conversation to the OpenAI API
-            response = openai.ChatCompletion.create(model=model, messages=[{"role": "system", "content": transcript}, {"role": "user", "content": text}])
+            response = client.chat.completions.create(model=model, messages=[{"role": "system", "content": transcript}, {"role": "user", "content": text}])
             response_text = response.choices[0].message.content
             print(response_text)
 
